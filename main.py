@@ -4,12 +4,12 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 # Replace with your API ID, API Hash, and Bot Token
-API_ID = "21705536"
-API_HASH = "c5bb241f6e3ecf33fe68a444e288de2d"
-BOT_TOKEN = "8013725761:AAGQyr32ibk7HQNqxv4FSD2ZrrSLOmzknlg"
+API_ID = "18116358"
+API_HASH = "80e7597f27a57df271dfc500120d4ea9"
+BOT_TOKEN = "7207739619:AAF9kZhpI9YbRa4-QUtyfH7VUmKw3RtjBww"
 
 # Telegram channel where files will be forwarded
-CHANNEL_USERNAME = "engineerbabuxtfiles"  # Replace with your channel username
+CHANNEL_USERNAME = ""  # Replace with your channel username
 
 # Initialize Pyrogram Client
 app = Client("my_bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
@@ -97,7 +97,7 @@ def generate_html(file_name, videos, pdfs, others):
 </head>
 <body>
     <div class="header">{file_name_without_extension}</div>
-    <div class="subheading">📥 𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 : <a href="https://t.me/Engineers_Babu" target="_blank">𝕰𝖓𝖌𝖎𝖓𝖊𝖊𝖗𝖘 𝕭𝖆𝖇𝖚™</a></div>
+    <div class="subheading">📥 𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 : <a href="https://t.me/SEM2JOB" target="_blank">SEM2JOB</a></div>
 
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search for videos, PDFs, or other resources..." oninput="filterContent()">
@@ -106,7 +106,7 @@ def generate_html(file_name, videos, pdfs, others):
     <div id="noResults" class="no-results">No results found.</div>
 
     <div id="video-player">
-        <video id="engineer-babu-player" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
+        <video id="sem2job-player" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
             <p class="vjs-no-js">
                 To view this video please enable JavaScript, and consider upgrading to a web browser that
                 <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -115,7 +115,7 @@ def generate_html(file_name, videos, pdfs, others):
         <div class="download-button">
             <a id="download-link" href="#" download>Download Video</a>
         </div>
-        <div style="text-align: center; margin-top: 10px; font-weight: bold; color: #007bff;">Engineer Babu Player</div>
+        <div style="text-align: center; margin-top: 10px; font-weight: bold; color: #007bff;">SEM2JOB Player</div>
     </div>
 
     <div class="container">
@@ -145,11 +145,11 @@ def generate_html(file_name, videos, pdfs, others):
         </div>
     </div>
 
-    <div class="footer">Extracted By - <a href="https://t.me/Engineers_Babu" target="_blank">Engineer Babu</a></div>
+    <div class="footer">Extracted By - <a href="https://t.me/SEM2JOB" target="_blank">SEM2JOB</a></div>
 
     <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
     <script>
-        const player = videojs('engineer-babu-player', {{
+        const player = videojs('sem2job-player', {{
             controls: true,
             autoplay: false,
             preload: 'auto',
@@ -225,7 +225,22 @@ def generate_html(file_name, videos, pdfs, others):
 # Command handler for /start
 @app.on_message(filters.command("start"))
 async def start(client: Client, message: Message):
-    await message.reply_text("𝐖𝐞𝐥𝐜𝐨𝐦𝐞! 𝐏𝐥𝐞𝐚𝐬𝐞 𝐮𝐩𝐥𝐨𝐚𝐝 𝐚 .𝐭𝐱𝐭 𝐟𝐢𝐥𝐞 𝐜𝐨𝐧𝐭𝐚𝐢𝐧𝐢𝐧𝐠 𝐔𝐑𝐋𝐬.")
+    await message.reply_text(" 📂 URL Viewer - Convert .txt to HTML 📄
+
+🚀 Welcome! This tool allows you to upload a .txt file containing URLs and automatically generates an HTML page with clickable links.
+
+🌟 Features
+
+✔ Upload a .txt file with URLs
+✔ Automatically convert URLs into a structured HTML list
+✔ Directly view videos & PDFs from the generated page
+✔ Clean & simple user interface
+
+🔧 How to Use?
+
+1️⃣ Upload a .txt file containing URLs.
+2️⃣ The system will process and display them in an interactive format.
+3️⃣ Click on any link to open the video or PDF directly @SEM2JO.")
 
 # Message handler for file uploads
 @app.on_message(filters.document)
@@ -256,7 +271,7 @@ async def handle_file(client: Client, message: Message):
         f.write(html_content)
 
     # Send the HTML file to the user
-    await message.reply_document(document=html_file_path, caption="✅ 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐃𝐨𝐧𝐞!\n\n📥 𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 : 𝕰𝖓𝖌𝖎𝖓𝖊𝖊𝖗𝖘 𝕭𝖆𝖇𝖚™")
+    await message.reply_document(document=html_file_path, caption="✅ 𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥𝐥𝐲 𝐃𝐨𝐧𝐞!\n\n📥 𝐄𝐱𝐭𝐫𝐚𝐜𝐭𝐞𝐝 𝐁𝐲 : @SEM2JOB")
 
     # Forward the .txt file to the channel
     await client.send_document(chat_id=CHANNEL_USERNAME, document=file_path)
